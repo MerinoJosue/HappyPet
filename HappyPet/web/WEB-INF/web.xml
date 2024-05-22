@@ -40,6 +40,14 @@
         <servlet-name>ControladorEmpleado</servlet-name>
         <servlet-class>Controlador.ControladorEmpleado</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Redireccionar</servlet-name>
+        <servlet-class>Controlador.Redireccionar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorAdmi</servlet-name>
+        <servlet-class>Controlador.ControladorAdmi</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -80,9 +88,20 @@
         <servlet-name>ControladorEmpleado</servlet-name>
         <url-pattern>/ControladorEmpleado</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Redireccionar</servlet-name>
+        <url-pattern>/Redireccionar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorAdmi</servlet-name>
+        <url-pattern>/ControladorAdmi</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>Inicio.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

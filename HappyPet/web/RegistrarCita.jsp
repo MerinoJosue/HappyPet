@@ -44,14 +44,14 @@
                             <form action="ControladorCita?menu=Cita"method="POST">
                                 <div class="form-group">
                                     <label>Día de la cita</label>
-                                    <input type="date" name="txtFecha" class="form-control">
+                                    <input type="date" name="txtFecha" value="${em.fecha}" class="form-control">
                                 </div>
 
                                 <br>
 
                                 <div class=form-group">
                                     <label>Hora</label>
-                                    <input type="time"  name="txtHora"  class="form-control">
+                                    <input type="time"  name="txtHora" value="${em.hora}"  class="form-control">
                                 </div>
 
                                 <br>
@@ -85,7 +85,7 @@
                                 <div class="form-group">
                                     <label for="mascota">Mascota</label>
                                     <select name="mascotas" id="mascotas" class="form-select">
-                                        <c:forEach var="em" items="${mascotas}">
+                                        <c:forEach var="em" items="${mascotas}" >
                                             <option value="${em.id_Mascota}">
                                                 ${em.nombre}
                                             </option>
@@ -97,7 +97,7 @@
 
                                 <div class=form-group">
                                     <label>Motivo</label>
-                                    <input type="text"  name="txtMotivo"  class="form-control">
+                                    <input type="text"  name="txtMotivo" value="${em.motivo}" class="form-control">
                                 </div>
 
                                 <br>
@@ -121,7 +121,9 @@
                                     <th scope="col">Hora</th>
                                     <th scope="col">Veterinario</th>
                                     <th scope="col">Cliente</th>
-                                    <th scope="col">Mascota</th>   
+                                    <th scope="col">Mascota</th>
+                                    <th scope="col">Motivo</th>
+                                    
                                     <th scope="col"></th>   
                                 </tr>
                             </thead>
@@ -134,6 +136,7 @@
                                     <td class="align-middle">${em.empleado}</td>
                                     <td class="align-middle">${em.cliente}</td>
                                     <td class="align-middle">${em.mascota}</td>
+                                    <td class="align-middle">${em.motivo}</td>
                                     <td class="align-middle">
                                         <button type="button" class="btn btn-warning">
                                             <i class="fas fa-pencil"></i>

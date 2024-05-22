@@ -73,8 +73,10 @@
                 <div class="back-img"> <!-- Imagen de fondo -->
                     <div class="inicio">
                         <h1>Bienvenido(a) a HappyPet</h1>
-                        <input type="submit" name="accion" value="Empleado" class="btn btn-primary">
-                        <input type="submit" name="accion" value="Administrador" class="btn btn-primary">
+                        <form action="action">                        
+                            <a href="LoginAdministrador.jsp" class="btn btn-primary">Admin</a>
+                            <a href="LoginEmpleado.jsp" class="btn btn-primary">Empleado</a>
+                        </form>
                     </div>
                 </div>
             </div>
