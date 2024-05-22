@@ -15,10 +15,13 @@ public class ServiciosDAO {
     ResultSet rs;
     int r;
 
-
     public List<Servicios> listar() {
-        String sql = "SELECT * FROM Servicios";
+        String sql = "SELECT * FROM servicios";
         List<Servicios> lista = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
         try {
             con = cn.Conexion();
             if (con == null) {
@@ -27,33 +30,47 @@ public class ServiciosDAO {
             }
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
+
             while (rs.next()) {
                 Servicios sv = new Servicios();
-                sv.setId_Servicio(rs.getInt("Id_Empleado"));
-                sv.setDescripcion(rs.getString("Dni"));
-                sv.setCosto(rs.getString("Nom"));
+                sv.setId_Servicio(rs.getInt("Id_Servicio"));  // Asegúrate de que esta columna exista en tu BD
+                sv.setNombre(rs.getString("nombre"));
+                sv.setDescripcion(rs.getString("descripcion"));
+                sv.setCosto(rs.getString("costo"));
                 lista.add(sv);
             }
-            System.out.println("Número de empleados recuperados: " + lista.size());
-            rs.close();
-            ps.close();
-            con.close();
+
+            System.out.println("Número de servicios recuperados: " + lista.size());
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
         return lista;
     }
 
-    public int agregar(Empleado em) {
-        String sql = "insert into empleado(Dni, Nom, Tel, Estado,User)values(?,?,?,?,?)";
+    
+    public int agregar(Servicios sv) {
+        String sql = "insert into servicios(nombre, descripcion, costo)values(?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
-            ps.setString(1, em.getDni());
-            ps.setString(2, em.getNom());
-            ps.setString(3, em.getTel());
-            ps.setString(4, em.getEstado());
-            ps.setString(5, em.getUser());
+            ps.setString(1, sv.getNombre());
+            ps.setString(2, sv.getDescripcion());
+            ps.setString(3, sv.getCosto());
             ps.executeUpdate();
 
         } catch (Exception e) {
@@ -61,38 +78,33 @@ public class ServiciosDAO {
         }
         return r;
     }
-
-    public Empleado listarId(int id) {
-        Empleado emp = new Empleado();
-        String sql = "select * from empleado where Id_Empleado=" + id;
+    
+    public Servicios listarId(int id) {
+        Servicios svc = new Servicios();
+        String sql = "select * from servicios where Id_Servicio=" + id;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                emp.setDni(rs.getString(2));
-                emp.setNom(rs.getString(3));
-                emp.setTel(rs.getString(4));
-                emp.setEstado(rs.getString(5));
-                emp.setUser(rs.getString(6));
+                svc.setNombre(rs.getString(1));
+                svc.setDescripcion(rs.getString(2));
+                svc.setCosto(rs.getString(3));
             }
         } catch (Exception e) {
         }
-        return emp;
+        return svc;
     }
 
-    public int actualizar(Empleado em) {
+    public int actualizar(Servicios sv) {
         int resultado = 0;
-        String sql = "UPDATE empleado SET Dni=?, Nom=?, Tel=?, Estado=?, User=? WHERE Id_Empleado=?";
+        String sql = "UPDATE servicios SET nombre=?, descripcion=?, costo=? WHERE Id_Servicio=?";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
-            ps.setString(1, em.getDni());
-            ps.setString(2, em.getNom());
-            ps.setString(3, em.getTel());
-            ps.setString(4, em.getEstado());
-            ps.setString(5, em.getUser());
-            ps.setInt(6, em.getId_Empleado());
+            ps.setString(1, sv.getNombre());
+            ps.setString(2, sv.getDescripcion());
+            ps.setString(3, sv.getCosto());
             resultado = ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

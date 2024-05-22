@@ -20,7 +20,7 @@
                         <li class="nav-item"><a class="fa-sharp fa-solid fa-hospital-user" href="ControladorProductos?menu=Productos&accion=Listar">Productos</a></li>
                         <li class="nav-item"><a class="fa-solid fa-bed-pulse" href="ControladorCliente?menu=Cliente&accion=Listar">Clientes</a></li>
                         <li class="nav-item"><a class="fa-solid fa-bed-pulse" href="Controlador?menu=RegistrarVenta">Nueva Venta</a></li>
-                        <li class="nav-item"><a class="fa-solid fa-phone" href="ControladorServicios?menu=Servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="fa-solid fa-phone" href="ControladorServicios?menu=Servicio&accion=Listar">Servicios</a></li>
                         <li class="nav-item"><a class="fa-solid fa-envelope" href="ControladorCita?menu=Cita&accion=Listar">Registrar Cita</a></li>
                     </ul>
                 </nav>

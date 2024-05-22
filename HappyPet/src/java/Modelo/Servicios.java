@@ -10,7 +10,6 @@ public class Servicios {
     private String costo;
     
     public Servicios(){
-        
     }
 
     public Servicios(int Id_Servicio, String nombre, String descripcion, String costo) {
@@ -40,6 +39,7 @@ public class Servicios {
     public String getDescripcion() {
         return descripcion;
     }
+    
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;

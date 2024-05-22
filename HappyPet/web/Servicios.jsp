@@ -41,27 +41,19 @@
                         </div>
                         <div class="card-body">
                             <form action="ControladorServicios?menu=Servicio" method="POST">
-                                <input type="hidden" name="menu" value="Servicio" />
-                                <input type="hidden" name="id" value="${servicio.getId_Servicio()}" />
+                                <input type="hidden" name="menu" value="servicios" />
+                                <input type="hidden" name="id"  />
                                 <div class="form-group">
-                                    <label>Dni</label>
-                                    <input type="text" name="txtDni" value="${empleado.getDni()}" class="form-control">
+                                    <label>Servicio</label>
+                                    <input type="text" name="txtnombre" value="${servicio.getNombre()}" class="form-control">
                                 </div>
                                 <div class=form-group">
-                                    <label>Nombres</label>
-                                    <input type="text"  name="txtNom" value="${empleado.getNom()}" class="form-control">
+                                    <label>Descripcion</label>
+                                    <input type="text"  name="txtdescripcion" value="${servicio.getDescripcion()}" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Teléfono</label>
-                                    <input type="text"  name="txtTel" value="${empleado.getTel()}" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label >Estado</label>
-                                    <input type="text"  name="txtEstado" value="${empleado.getEstado()}" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label >Usuario</label>
-                                    <input type="text"  name="txtUser" value="${empleado.getUser()}" class="form-control">
+                                    <label>Costo</label>
+                                    <input type="text"  name="txtcosto" value="${servicio.getCosto()}" class="form-control">
                                 </div>
                                 <input type="submit"  name="accion" value="Actualizar" class="btn btn-success">
                                 <input type="submit"  name="accion" value="Agregar" class="btn btn-info">
@@ -82,26 +74,21 @@
                                         <th>NOMBRE</th>
                                         <th>DESCRIPCION</th>
                                         <th>COSTO</th>
-                                        <th>ID_Cita</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach var="em" items="${empleados}">
+                                    <c:forEach var="sv" items="${servicios}">
                                         <tr>
-                                            <td>${em.getId_Empleado()}</td>
-                                            <td>${em.getDni()}</td>
-                                            <td>${em.getNom()}</td>
-                                            <td>${em.getTel()}</td>
-                                            <td>${em.getEstado()}</td>
-                                            <td>${em.getUser()}</td>
+                                            <td>${sv.getId_Servicio()}</td>
+                                            <td>${sv.getNombre()}</td>
+                                            <td>${sv.getDescripcion()}</td>
+                                            <td>${sv.getCosto()}</td>
                                             <td>
-                                                <a class="btn btn-warning" href="ControladorEmpleado?menu=Empleado&accion=Editar&id=${em.getId_Empleado()}">Editar</a>
-                                                <a class="btn btn-danger" href="ControladorEmpleado?menu=Empleado&accion=Delete&id=${em.getId_Empleado()}">Delete</a>
+                                                <a class="btn btn-warning" href="ControladorServicios?menu=Servicio&accion=Editar&id=${sv.getId_Servicio()}">Editar</a>
+                                                <a class="btn btn-danger" href="ControladorServicios?menu=Servicio&accion=Delete&id=${sv.getId_Servicio()}">Delete</a>
                                             </td>
                                         </tr>
                                     </c:forEach> 
-
-
 
                                 </tbody>
                             </table>
