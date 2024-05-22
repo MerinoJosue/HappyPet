@@ -30,7 +30,8 @@
                     <h1>Centro de Veterinaria</h1>
                 </div>
                 <div class="header-img">
-                    <img src="veterinaria image/left.png" alt="">
+                    <img src="imagen/Weekly Roundup_ Funny Dog Posts From Last Week (Feb 13).jpeg" alt=""/>
+                
                 </div>
             </div>
         </header>

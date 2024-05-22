@@ -31,7 +31,8 @@
                     <h1>Centro de Veterinaria</h1>
                 </div>
                 <div class="header-img">
-                    <img src="veterinaria image/left.png" alt="">
+                    <img src="imagen/pexels-jozef-feher-356581-2774140.jpg" alt=""/>
+                   
                 </div>
             </div>
         </header>

@@ -32,6 +32,10 @@
         </style>
     </head>
     <body>
+       <div class="logo-container">
+        <a href="PrincipalEmp.jsp">
+            <img src="imagen/Logo.jpeg" alt="Logo HappyPet" width="100">
+        </a>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 mb-4">

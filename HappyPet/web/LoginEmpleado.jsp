@@ -16,6 +16,12 @@
             padding-right: 50px;
         }
 
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
         .login-container {
             display: flex;
             flex-direction: column;
@@ -33,9 +39,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="menu-logo">
-        <a href="" class="logo">logo logo</a>
+
+    <div class="logo-container">
+        <a href="Inicio.jsp">
+            <img src="imagen/Logo.jpeg" alt="Logo HappyPet" width="100">
+        </a>
     </div>
+
     <div class="login-container">
         <div class="welcome-text">
             <label>Bienvenidos(a) a HappyPet</label>

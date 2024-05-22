@@ -1,85 +1,89 @@
-<%-- 
-    Document   : Inicio
-    Created on : 21 may. 2024, 16:30:23
-    Author     : Ionic
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
-            body {
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                font-size: 20px;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a HappyPet</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Color de fondo suave */
+        }
 
-            .container {
-                text-align: center;
-                position: relative; /* Se añade posición relativa para permitir posicionamiento absoluto de los elementos hijos */
-            }
-
-            .back-img-container {
-                position: relative; /* Se añade posición relativa para contener la imagen de fondo y el logo */
-                width: 900px;
-                height: 600px;
-                margin-bottom: 30px;
-            }
-
-            .back-img {
-                background-image: url("images/fullperros.jpeg");
-                background-repeat: no-repeat;
-                background-size: contain;
-                width: 100%; /* Ancho relativo al contenedor */
-                height: 100%; /* Altura relativa al contenedor */
-            }
-
-            .imagen-logo {
-                background-image: url("images/logo.jpeg");
-                background-repeat: no-repeat;
-                background-size: contain;
-                width: 500px;
-                height: 75px;
-                position: absolute; /* Se añade posición absoluta */
-                top: 20px;
-                left: 20px;
-            }
-
-            .btn{
-                background-color: aqua;
-                padding: 20px 0px;
-                border: 0px;
-                margin: 0 15px;
-                font-size: 24px;
-                width: 150px;
-            }
-
-            .inicio {
-                padding: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="back-img-container"> <!-- Contenedor para la imagen de fondo y el logo -->
-                <div class="imagen-logo"></div> <!-- Logo -->
-                <div class="back-img"> <!-- Imagen de fondo -->
-                    <div class="inicio">
-                        <h1>Bienvenido(a) a HappyPet</h1>
-                        <form action="action">                        
-                            <a href="LoginAdministrador.jsp" class="btn btn-primary">Admin</a>
-                            <a href="LoginEmpleado.jsp" class="btn btn-primary">Empleado</a>
-                        </form>
-                    </div>
+        .back-img-container {
+            position: relative;
+            width: 900px;
+            height: 600px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden; /* Para que la imagen de fondo no se salga del contenedor */
+        }
+        .back-img {
+            background-image: url('imagen/14.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover; /* Mantener la imagen como estaba */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Para centrar el contenido verticalmente */
+        }
+        .imagen-logo {
+            background-image: url('imagen/logo.jpeg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .inicio {
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .inicio h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .btn {
+            background-color: #00bfff; /* Color de botón */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #008fbf; /* Color de botón al pasar el ratón por encima */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-img-container">
+            <div class="imagen-logo"></div>
+            <div class="back-img">
+                <div class="inicio">
+                    <h1>Bienvenido(a) a HappyPet</h1>
+                    <a href="LoginAdministrador.jsp" class="btn">Admin</a>
+                    <a href="LoginEmpleado.jsp" class="btn">Empleado</a>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

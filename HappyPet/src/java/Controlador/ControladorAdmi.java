@@ -8,11 +8,14 @@ import Modelo.Admin;
 import Modelo.AdminDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(name = "ControladorAdmi", urlPatterns = {"/ControladorAdmi"})
 public class ControladorAdmi extends HttpServlet {
 
     Admin ad = new Admin();
@@ -44,7 +47,7 @@ public class ControladorAdmi extends HttpServlet {
             ad = adao.ValidarAdmin(user, pass);
             // Si el usuario es válido, redirige a la página Principal
             if (ad.getUser() != null) {
-                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+                request.getRequestDispatcher("ControladorAdmi?menu=Principal").forward(request, response);
             }
         }
 
