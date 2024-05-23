@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package Controlador;
 
 import Modelo.Empleado;
@@ -26,73 +22,70 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author USER
+ * Servlet implementation class ControladorCita
  */
 public class ControladorCita extends HttpServlet {
 
-    Cita c = new Cita();
-    CitaDAO cdao = new CitaDAO();
+    Cita c = new Cita(); // Crea una instancia de Cita
+    CitaDAO cdao = new CitaDAO(); // Crea una instancia de CitaDAO para acceder a los métodos de la base de datos
+    int cde; // Variable para almacenar el ID de la cita
 
-       
-    int cde;
-   
+    // Método para procesar las solicitudes tanto GET como POST
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String menu = request.getParameter("menu");
-        String accion = request.getParameter("accion");
+        String menu = request.getParameter("menu"); // Obtiene el parámetro 'menu' de la solicitud
+        String accion = request.getParameter("accion"); // Obtiene el parámetro 'accion' de la solicitud
         
-        if (menu.equals("Cita")) {
-             switch (accion) {
-                                                
-                case "Listar":
-                    List<Cita> lista = cdao.listar();
+        if (menu.equals("Cita")) { // Verifica si el menú seleccionado es "Cita"
+            switch (accion) { // Verifica la acción seleccionada
+                case "Listar": // Caso para listar las citas
+                    List<Cita> lista = cdao.listar(); // Obtiene la lista de citas
                     System.out.println("Número de citas listadas en el servlet: " + lista.size());
-                    request.setAttribute("citas", lista);
-                    request.getRequestDispatcher("Citas.jsp").forward(request, response);
+                    request.setAttribute("citas", lista); // Establece la lista de citas como un atributo de la solicitud
+                    request.getRequestDispatcher("Citas.jsp").forward(request, response); // Redirige a la página Citas.jsp
                     break;
 
-                case "Agregar":
-                    
-                    String Fecha = request.getParameter("txtFecha");                                                                           
-                    String Hora = request.getParameter("txtHora");
-                    String Empleado = request.getParameter("empleados");
-                    String Cliente = request.getParameter("cliente");
-                    String Mascota = request.getParameter("mascotas");
-                    String Motivo = request.getParameter("txtMotivo");
-                    c.setFecha(Fecha);
-                    c.setHora(Hora);
-                    c.setEmpleado(Empleado);
-                    c.setCliente(Cliente);
-                    c.setMascota(Mascota);
-                    c.setMotivo(Motivo);
-                    cdao.agregar(c);
-                    request.getRequestDispatcher("ControladorCita?menu=Cita&accion=Listar").forward(request, response);
+                case "Agregar": // Caso para agregar una nueva cita
+                    String Fecha = request.getParameter("txtFecha"); // Obtiene la fecha de la cita del formulario
+                    String Hora = request.getParameter("txtHora"); // Obtiene la hora de la cita del formulario
+                    String Empleado = request.getParameter("empleados"); // Obtiene el empleado de la cita del formulario
+                    String Cliente = request.getParameter("cliente"); // Obtiene el cliente de la cita del formulario
+                    String Mascota = request.getParameter("mascotas"); // Obtiene la mascota de la cita del formulario
+                    String Motivo = request.getParameter("txtMotivo"); // Obtiene el motivo de la cita del formulario
+                    c.setFecha(Fecha); // Establece la fecha en el objeto Cita
+                    c.setHora(Hora); // Establece la hora en el objeto Cita
+                    c.setEmpleado(Empleado); // Establece el empleado en el objeto Cita
+                    c.setCliente(Cliente); // Establece el cliente en el objeto Cita
+                    c.setMascota(Mascota); // Establece la mascota en el objeto Cita
+                    c.setMotivo(Motivo); // Establece el motivo en el objeto Cita
+                    cdao.agregar(c); // Agrega la cita a la base de datos
+                    request.getRequestDispatcher("ControladorCita?menu=Cita&accion=Listar").forward(request, response); // Redirige a la acción Listar
                     break;
 
-                case "Editar":
-                 
+                case "Editar": // Caso para editar una cita (pendiente de implementación)
                     break;
-                case "Actualizar":
-                   
+
+                case "Actualizar": // Caso para actualizar una cita (pendiente de implementación)
                     break;
-                case "Delete":
-                    cde = Integer.parseInt(request.getParameter("Id_Cita"));
-                    cdao.delete(cde);
+
+                case "Delete": // Caso para eliminar una cita
+                    cde = Integer.parseInt(request.getParameter("Id_Cita")); // Obtiene el ID de la cita a eliminar
+                    cdao.delete(cde); // Elimina la cita de la base de datos
                     System.out.println(cde);
-                    request.getRequestDispatcher("ControladorCita?menu=Cita&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("ControladorCita?menu=Cita&accion=Listar").forward(request, response); // Redirige a la acción Listar
                     break;
+
                 default:
-                    throw new AssertionError();
+                    throw new AssertionError(); // Lanza una excepción si la acción no es reconocida
             }
-            
-            request.getRequestDispatcher("Citas.jsp").forward(request, response);
+
+            request.getRequestDispatcher("Citas.jsp").forward(request, response); // Redirige a la página Citas.jsp
         }
         
+        // Respuesta HTML de prueba (puede ser eliminada)
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -105,54 +98,34 @@ public class ControladorCita extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    // Método que maneja las solicitudes GET
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        List<Cita> lista = cdao.listar(); // Obtiene la lista de citas
+        request.setAttribute("citas", lista); // Establece la lista de citas como un atributo de la solicitud
         
-        List<Cita> lista = cdao.listar();
-        request.setAttribute("citas", lista);
-                
-        
-                        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Citas.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Citas.jsp"); // Redirige a la página Citas.jsp
         dispatcher.forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    // Método que maneja las solicitudes POST
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        /*String clienteSeleccionado = request.getParameter("clienteSeleccionado");
+        processRequest(request, response); // Llama al método processRequest para manejar la solicitud
+        /*
+        String clienteSeleccionado = request.getParameter("clienteSeleccionado");
         List<Mascota> listaMascota = mcdao.listarxCliente(clienteSeleccionado);
         request.setAttribute("mascotas", listaMascota);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("Citas.jsp");
-        dispatcher.forward(request, response);*/
+        dispatcher.forward(request, response);
+        */
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    // Método que proporciona una descripción corta del servlet
     @Override
     public String getServletInfo() {
         return "Short description";
