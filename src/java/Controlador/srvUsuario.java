@@ -24,6 +24,7 @@ public class srvUsuario extends HttpServlet {
                         break;
                     case "cerrar":
                         cerrarsession(request, response);
+                        break;
                     default:
                         response.sendRedirect("identificar.jsp");
                 }

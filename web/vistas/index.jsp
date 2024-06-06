@@ -124,6 +124,7 @@
                                 <li><a href=""><i class="fa fa-tags"></i>Mascotas</a></li>
                                 <li><a href="ControladorProductos?menu=Productos&accion=Listar"><i class="fa fa-cube"></i>Productos</a></li>
                                 <li><a href="#"><i class="fa fa-users"></i>Clientes</a></li>
+                                <li><a href="ControladorServicios?menu=Servicios&accion=Listar"><i class="fa fa-users"></i>Servicios</a></li>
 
                             </ul>
                         </li>

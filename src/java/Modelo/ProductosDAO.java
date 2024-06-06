@@ -65,7 +65,7 @@ public class ProductosDAO {
         try {
             con = cn.conectar();
             ps = con.prepareStatement(sql);
-            ps.setString(1, "VENDEDOR");
+            ps.setString(1, pr.getNombre());
             ps.setString(2, pr.getPrecio());
             ps.setString(3, pr.getStock());
             ps.setString(4, pr.getEstado());

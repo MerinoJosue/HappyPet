@@ -9,41 +9,30 @@ package Modelo;
  * @author USER
  */
 public class Mascota {
-    
-    String   Id_Mascota;
-    String   cliente;
-    String   Nombre;
-    String   Especie;
-    String   Raza;
-    String   Edad;
-    String   Sexo;    
-    
-    public Mascota(){}
 
-    public Mascota(String ID_Mascota, String cliente, String Nombre, String Especie, String Raza, String Edad, String Sexo) {
-        this.Id_Mascota = ID_Mascota;
-        this.cliente = cliente;
+    String IDUSUARIO;
+    String Nombre;
+    String Raza;
+    String Especie;
+    String Sexo;
+
+    public Mascota() {
+    }
+
+    public Mascota(String IDUSUARIO, String Nombre, String Raza, String Especie, String Sexo) {
+        this.IDUSUARIO = IDUSUARIO;
         this.Nombre = Nombre;
-        this.Especie = Especie;
         this.Raza = Raza;
-        this.Edad = Edad;
+        this.Especie = Especie;
         this.Sexo = Sexo;
     }
 
-    public String getId_Mascota() {
-        return Id_Mascota;
+    public String getIDUSUARIO() {
+        return IDUSUARIO;
     }
 
-    public void setId_Mascota(String ID_Mascota) {
-        this.Id_Mascota = ID_Mascota;
-    }
-
-    public String getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setIDUSUARIO(String IDUSUARIO) {
+        this.IDUSUARIO = IDUSUARIO;
     }
 
     public String getNombre() {
@@ -54,14 +43,6 @@ public class Mascota {
         this.Nombre = Nombre;
     }
 
-    public String getEspecie() {
-        return Especie;
-    }
-
-    public void setEspecie(String Especie) {
-        this.Especie = Especie;
-    }
-
     public String getRaza() {
         return Raza;
     }
@@ -70,12 +51,12 @@ public class Mascota {
         this.Raza = Raza;
     }
 
-    public String getEdad() {
-        return Edad;
+    public String getEspecie() {
+        return Especie;
     }
 
-    public void setEdad(String Edad) {
-        this.Edad = Edad;
+    public void setEspecie(String Especie) {
+        this.Especie = Especie;
     }
 
     public String getSexo() {
@@ -88,5 +69,4 @@ public class Mascota {
 
     
 
-    
 }
