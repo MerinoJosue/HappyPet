@@ -54,14 +54,13 @@ public class ControladorProductos extends HttpServlet {
                     request.getRequestDispatcher("ControladorProductos?menu=Productos&accion=Listar").forward(request, response);
                     break;
 
-                     case "Editar":
+                case "Editar":
 
                     pde = Integer.parseInt(request.getParameter("id"));
                     Productos p = pdao.listarId(pde);
                     request.setAttribute("producto", p);
                     request.getRequestDispatcher("ControladorProductos?menu=Productos&accion=Listar").forward(request, response);
                     break;
-
 
                 case "Actualizar":
                     String Nombre1 = request.getParameter("txtNombre");
@@ -71,6 +70,23 @@ public class ControladorProductos extends HttpServlet {
                     Productos pr = new Productos(pde, Nombre1, Precio1, Stock1, Estado1);
                     pdao.actualizar(pr);
                     request.getRequestDispatcher("ControladorProductos?menu=Productos&accion=Listar").forward(request, response);
+                    break;
+
+                case "GenerarPDF":
+                    // Obtener la lista de productos
+                    List<Productos> listaProductos = pdao.listar();
+                    try {
+                        response.setContentType("application/pdf");
+                        response.setHeader("Content-Disposition", "attachment; filename=productos.pdf");
+                        PrintWriter out = response.getWriter();
+                        out.println("ID | Nombre | Precio | Stock | Estado");
+                        for (Productos producto : listaProductos) {
+                            out.println(producto.getId_Producto() + " | " + producto.getNombre() + " | " + producto.getPrecio() + " | " + producto.getStock() + " | " + producto.getEstado());
+                        }
+                        out.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case "Delete":

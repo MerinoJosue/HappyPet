@@ -6,6 +6,14 @@ package Modelo;
 
 
 import Modelo.conexion;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,7 +73,7 @@ public class ProductosDAO {
         try {
             con = cn.conectar();
             ps = con.prepareStatement(sql);
-            ps.setString(1, "VENDEDOR");
+            ps.setString(1, pr.getNombre());
             ps.setString(2, pr.getPrecio());
             ps.setString(3, pr.getStock());
             ps.setString(4, pr.getEstado());
@@ -121,6 +129,34 @@ public class ProductosDAO {
             ps = con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
+        }
+    }
+     public byte[] generarPDF(List<Productos> productos) throws IOException {
+        try (PDDocument document = new PDDocument()) {
+            PDPage page = new PDPage();
+            document.addPage(page);
+
+            try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
+                contentStream.beginText();
+                contentStream.newLineAtOffset(100, 700);
+                contentStream.showText("Lista de Productos");
+                contentStream.endText();
+
+                int y = 680;
+                for (Productos producto : productos) {
+                    contentStream.beginText();
+                    contentStream.newLineAtOffset(100, y);
+                    contentStream.showText("ID: " + producto.getId_Producto() + ", Nombre: " + producto.getNombre() +
+                            ", Precio: " + producto.getPrecio() + ", Stock: " + producto.getStock() +
+                            ", Estado: " + producto.getEstado());
+                    contentStream.endText();
+                    y -= 20;
+                }
+            }
+
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            document.save(outputStream);
+            return outputStream.toByteArray();
         }
     }
 }

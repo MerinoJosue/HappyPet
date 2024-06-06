@@ -191,7 +191,11 @@
                                             </c:forEach>
                                         </tbody>
                                     </table>
-                                     <a class="btn btn-info" data-toggle="modal" data-target="#addProductModal"><i class="fa fa-user-plus"></i></a>
+                                    
+                                    <a class="btn btn-primary" href="ControladorProductos?menu=Productos&accion=GenerarPDF"><i class="fa fa-file-pdf-o"></i></a>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#addProductModal"><i class="fa fa-user-plus"></i></a>
+                                    
+
                                 </div>
                             </div>
                         </div>
@@ -200,41 +204,41 @@
             </div>
 
             <!-- Modal Agregar Producto -->
-        <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addProductModalLabel">Agregar Producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="ControladorProductos?menu=Productos" method="POST">
-                            <input type="hidden" name="menu" value="Productos" />
-                            <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" name="txtNombre" value="${producto.getNombre()}" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Precio</label>
-                                <input type="text" name="txtPrecio" value="${producto.getPrecio()}" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Stock</label>
-                                <input type="text" name="txtStock" value="${producto.getStock()}" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label>Estado</label>
-                                <input type="text" name="txtEstado" value="${producto.getEstado()}" class="form-control">
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                            </div>
+            <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addProductModalLabel">Agregar Producto</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="ControladorProductos?menu=Productos" method="POST">
+                                <input type="hidden" name="menu" value="Productos" />
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" name="txtNombre" value="${producto.getNombre()}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Precio</label>
+                                    <input type="text" name="txtPrecio" value="${producto.getPrecio()}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Stock</label>
+                                    <input type="text" name="txtStock" value="${producto.getStock()}" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Estado</label>
+                                    <input type="text" name="txtEstado" value="${producto.getEstado()}" class="form-control">
+                                </div>
+                                <div class="text-center">
+                                    <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                                </div>
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>                  
+            </div>                  
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
                     Anything you want
@@ -252,14 +256,14 @@
         <script src="dist/js/adminlte.min.js"></script>
         <!-- DataTables -->
         <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 // Inicializar la tabla de productos
                 $('#tablaProductos').DataTable();
 
                 // Agregar funcionalidad de búsqueda
-                $('#searchInput').on('keyup', function() {
+                $('#searchInput').on('keyup', function () {
                     $('#tablaProductos').DataTable().search($(this).val()).draw();
                 });
             });
@@ -267,7 +271,7 @@
     </body>
 </html>
 
-<%        
+<%
     } else {
         response.sendRedirect("identificar.jsp");
     }
