@@ -26,16 +26,16 @@
               href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     </head>
 
-    <body class="hold-transition skin-blue sidebar-mini">
-        <div class="wrapper">
+<body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
+        <div class="wrapper" style="height: auto; min-height: 100%;">
 
             <!-- Main Header -->
             <header class="main-header">
                 <a href="#" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>S</b>BL</span>
+                    <span class="logo-mini"><b>SH</b>PP</span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><b>Sistema </b>Bodega</span>
+                    <span class="logo-lg"><b>Happy </b>Pet</span>
                 </a>
 
                 <!-- Header Navbar -->
@@ -50,11 +50,11 @@
                             <!-- User Account Menu -->
                             <li class="dropdown user user-menu">
                                 <!-- Menu Toggle Button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                     <!-- The user image in the navbar-->
                                     <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                    <span class="hidden-xs">${vendedor.nombreUsuario}</span>
+                                    <span class="hidden-xs">STEPHANO</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
@@ -62,8 +62,8 @@
                                         <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                         <p>                    
-                                            Bienvenido - ${vendedor.nombreUsuario}
-                                            <small>Usted es, ${vendedor.cargo.nombreCargo} </small>
+                                            Bienvenido - STEPHANO
+                                            <small>Usted es, cliente </small>
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
@@ -90,16 +90,76 @@
                             <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
-                            <p>Bienvenido, ${vendedor.nombreUsuario}</p>
+                            <p>Bienvenido, STEPHANO</p>
                             <!-- Status -->
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i> En línea</a>
                         </div>
                     </div>
 
                     <!-- search form (Optional) -->
                     <form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <input type="text" name="q" class="form-control" placeholder="Buscar..." autofill-information="overall type: UNKNOWN_TYPE
+server type: NO_SERVER_DATA
+heuristic type: UNKNOWN_TYPE
+ml type: NO_SERVER_DATA
+raw ml type: NO_SERVER_DATA
+label: Search...
+parseable name: q
+section: q_0_38
+field signature: 1012080445
+form signature: 16297389673655997237
+form signature in host form: 16297389673655997237
+alternative form signature: 11468629280104699077
+field frame token: 7C0D5277E08313F9283C3C5EF3479145
+form renderer id: 34
+field renderer id: 38
+visible: true
+focusable: true
+field rank: 0
+field rank in signature group: 0
+field rank in host form: 0
+field rank in host form signature group: 0
+field signature string: q&amp;text
+form signature string: 
+form order: RegularForm0
+field order: 0
+form signatureV2: -6930874236453214944
+field signatureV2: -3890603570666514431
+domain signature: 3693946771987704403
+c id: 
+block suggestion reasons: None
+crowd decisions: crowd_decision_0:0, crowd_decision_1:0, crowd_decision_2:0, crowd_decision_3:0" title="overall type: UNKNOWN_TYPE
+server type: NO_SERVER_DATA
+heuristic type: UNKNOWN_TYPE
+ml type: NO_SERVER_DATA
+raw ml type: NO_SERVER_DATA
+label: Search...
+parseable name: q
+section: q_0_38
+field signature: 1012080445
+form signature: 16297389673655997237
+form signature in host form: 16297389673655997237
+alternative form signature: 11468629280104699077
+field frame token: 7C0D5277E08313F9283C3C5EF3479145
+form renderer id: 34
+field renderer id: 38
+visible: true
+focusable: true
+field rank: 0
+field rank in signature group: 0
+field rank in host form: 0
+field rank in host form signature group: 0
+field signature string: q&amp;text
+form signature string: 
+form order: RegularForm0
+field order: 0
+form signatureV2: -6930874236453214944
+field signatureV2: -3890603570666514431
+domain signature: 3693946771987704403
+c id: 
+block suggestion reasons: None
+crowd decisions: crowd_decision_0:0, crowd_decision_1:0, crowd_decision_2:0, crowd_decision_3:0" autofill-prediction="UNKNOWN_TYPE">
                             <span class="input-group-btn">
                                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                                 </button>
@@ -109,7 +169,7 @@
                     <!-- /.search form -->
 
                     <!-- Sidebar Menu -->
-                    <ul class="sidebar-menu" data-widget="tree">
+                    <ul class="sidebar-menu tree" data-widget="tree">
                         <li class="header">INICIO</li>
                         <!-- Optionally, you can add icons to the links -->
                         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Panel Administrativo</span></a></li>
@@ -121,7 +181,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="#"><i class="fa fa-cart-arrow-down"></i>Nueva Venta</a></li>
-                                <li><a href="srvMascota?menu=RegistrarMascota&accion=Listar"><i class="fa fa-tags"></i>Mascotas</a></li>
+                                <li><a href="#"><i class="fa fa-tags"></i>Administrar Ventas</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -131,7 +191,7 @@
             </aside>
 
             <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
+            <div class="content-wrapper" style="min-height: 976.906px;">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
@@ -143,84 +203,18 @@
                         <li class="active">Panel Administrativo</li>
                     </ol>
                 </section>
-
-                <section class="content">
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-aqua">
-                                <div class="inner">
-                                    <h3>150</h3>
-
-                                    <p>Nuevos Clientes</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Bounce Rate</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-yellow">
-                                <div class="inner">
-                                    <h3>44</h3>
-
-                                    <p>User Registrations</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>65</h3>
-
-                                    <p>Unique Visitors</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                </section>
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
 
             <!-- Main Footer -->
-             <footer class="main-footer">
+            <footer class="main-footer">
                 <!-- To the right -->
                 <div class="pull-right hidden-xs">
-                    PetFrendly
+                    Anything you want
                 </div>
                 <!-- Default to the left -->
-                <strong>HappyPet<a href="#"></a>.</strong> Todos los derechos reservados.
+                <strong>Copyright © 2020 <a href="#">IDAT</a>.</strong> Todos los derechos reservados.
             </footer>
 
             <div class="control-sidebar-bg"></div>
@@ -239,7 +233,10 @@
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
              Both of these plugins are recommended to enhance the
              user experience. -->
-    </body>
+    
+
+
+</body>
 </html>
 <%        
     } else {
