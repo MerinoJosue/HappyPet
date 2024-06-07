@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistema | Iniciar Session</title>
+  <title>Sistema Happypet | Iniciar Sesion</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -24,11 +24,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Sistema Ventas </b>Bodega</a>
+    <a href="#"><b>Sistema Happypet </b>Veterinaria</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Iniciar Session</p>
+    <p class="login-box-msg">Iniciar Sesion</p>
 
     <form action="srvUsuario?accion=verificar" method="POST">
       <div class="form-group has-feedback">
@@ -63,7 +63,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">Olvide mi contraseña</a><br>
-    <a href="Registrarse.jsp" class="text-center">Register un nuevo usuario</a>
+    <a href="Registrarse.jsp" class="text-center">Registrar un nuevo usuario</a>
 
   </div>
   <!-- /.login-box-body -->

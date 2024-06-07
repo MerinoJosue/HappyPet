@@ -3,11 +3,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Register User</title>
+    <title>Registrar Usuario Cliente</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            font-family: cursive sans-serif;
+            background-color:#555555;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,62 +15,62 @@
             margin: 0;
         }
         .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #3a87ad;
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: 0 0 300px rgba(0, 0, 0, 0.1);
             width: 400px;
         }
         h1 {
             text-align: center;
-            color: #333333;
+            color: #000\9;
         }
         form {
             display: flex;
             flex-direction: column;
         }
         label {
-            margin-bottom: 5px;
-            color: #555555;
+            margin-bottom: 15px;
+            color: #f8f7f6;
         }
         input[type="text"], input[type="password"], input[type="submit"] {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 3px solid #000\9;
+            border-radius: 25px;
+            font-size: 17px;
         }
         input[type="checkbox"] {
-            margin-bottom: 15px;
+            margin-bottom: 30px;
         }
         input[type="submit"] {
-            background-color: #007BFF;
+            background-color: #53d9f0;
             color: #ffffff;
             border: none;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #099;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Register User</h1>
+        <h1>Registrar Cliente</h1>
         <form action="RegisterServlet" method="post">
             <div class="form-group">
-                <label for="nombreUsuario">Username:</label>
+                <label for="nombreUsuario">Usuario:</label>
                 <input type="text" id="nombreUsuario" name="nombreUsuario" required>
             </div>
             <div class="form-group">
-                <label for="clave">Password:</label>
+                <label for="clave">Contraseña:</label>
                 <input type="password" id="clave" name="clave" required>
             </div>
             <div class="form-group">
-                <label for="estado">State:</label>
+                <label for="estado">Estado:</label>
                 <input type="checkbox" id="estado" name="estado">
             </div>
             <input type="submit" value="Register">

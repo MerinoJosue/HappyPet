@@ -71,6 +71,19 @@ public class ControladorVeterinario extends HttpServlet {
                     vdao.actualizar(ve);
                     request.getRequestDispatcher("ControladorVeterinario?menu=Veterinario&accion=Listar").forward(request, response);
                     break;
+                     case "GenerarPDF":
+                    // Obtener la lista de productos
+                    List<Veterinario> listaVeterinario = vdao.listar();
+                    try {
+                        response.setContentType("application/pdf");
+                        response.setHeader("Content-Disposition", "attachment; filename=Veterinario.pdf");
+                        PrintWriter out = response.getWriter();
+
+                        out.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 case "Delete":
                     vde = Integer.parseInt(request.getParameter("id"));
                     vdao.delete(vde);

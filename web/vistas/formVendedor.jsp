@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sistema Bodega| Inicio</title>
+        <title>Sistema Happypet| Inicio</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -33,9 +33,9 @@
             <header class="main-header">
                 <a href="#" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>S</b>BL</span>
+                    <span class="logo-mini"><b>SH</b>PP</span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><b>Sistema </b>Bodega</span>
+                    <span class="logo-lg"><b>Sistema </b>Veterinaria</span>
                 </a>
 
                 <!-- Header Navbar -->
@@ -63,13 +63,13 @@
 
                                         <p>                    
                                             Bienvenido - ${vendedor.nombreUsuario}
-                                            <small>Usted es, ${vendedor.cargo.nombreCargo} </small>
+                                            <small>Usted es Cliente </small>
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-right">
-                                            <a href="srvUsuario?accion=cerrar" class="btn btn-default btn-flat">Cerrar Session</a>
+                                            <a href="srvUsuario?accion=cerrar" class="btn btn-default btn-flat">Cerrar Sesion</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -135,8 +135,8 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Page Header
-                        <small>Optional description</small>
+                        Pagina Principal
+                        <small>Veterinaria</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -168,7 +168,7 @@
                                 <div class="inner">
                                     <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                                    <p>Bounce Rate</p>
+                                    <p>Rating de compras</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -181,9 +181,9 @@
                             <!-- small box -->
                             <div class="small-box bg-yellow">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3>4</h3>
 
-                                    <p>User Registrations</p>
+                                    <p>Usuarios registrados</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>

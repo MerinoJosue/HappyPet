@@ -192,7 +192,7 @@
                                         </tbody>
                                     </table>
 
-                                    <a class="btn btn-primary" href="ControladorProductos?menu=Productos&accion=GenerarPDF"><i class="fa fa-file-pdf-o"></i></a>
+                                    <a class="btn btn-primary" href="ControladorVeterinario?menu=Veterinario&accion=GenerarPDF"><i class="fa fa-file-pdf-o"></i></a>
                                     <a class="btn btn-info" data-toggle="modal" data-target="#addVeterinarioModal"><i class="fa fa-user-plus"></i></a>
 
 

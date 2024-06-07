@@ -39,8 +39,8 @@ public class RegisterServlet extends HttpServlet {
 
         try {
             DAOUSUARIO daoUsuario = new DAOUSUARIO();
-            daoUsuario.agregar(user);
-            response.getWriter().write("User registered successfully!");
+            daoUsuario.agregar(user);  
+            request.getRequestDispatcher("identificar.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().write("Error: " + e.getMessage());
