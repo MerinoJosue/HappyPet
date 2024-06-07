@@ -89,10 +89,10 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-archive"></i>Clientes</a></li>
+                                <li><a href="#"><i class="fa fa-archive"></i>Servicios</a></li>
                                 <li><a href="#"><i class="fa fa-tags"></i>Proveedores</a></li>
                                 <li><a href="ControladorProductos?menu=Productos&accion=Listar"><i class="fa fa-cube"></i>Productos</a></li>
-                                <li><a href="ControladorServicios?menu=Servicios&accion=Listar"><i class="fa fa-users"></i>Servicios</a></li>
+                                <li><a href="#"><i class="fa fa-users"></i>Clientes</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -191,10 +191,10 @@
                                             </c:forEach>
                                         </tbody>
                                     </table>
-
+                                    
                                     <a class="btn btn-primary" href="ControladorProductos?menu=Productos&accion=GenerarPDF"><i class="fa fa-file-pdf-o"></i></a>
                                     <a class="btn btn-info" data-toggle="modal" data-target="#addVeterinarioModal"><i class="fa fa-user-plus"></i></a>
-
+                                    
 
                                 </div>
                             </div>

@@ -7,23 +7,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sistema Bodega| Inicio</title>
-        <!-- Tell the browser to be responsive to screen width -->
+        <title>Sistema Bodega | Inicio</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!-- Font Awesome -->
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-        <!-- Ionicons -->
         <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-        <!-- Theme style -->
         <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
-
-        <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-              page. However, you can choose any other skin. Make sure you
-              apply the skin class to the body tag so the changes take effect. -->
         <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     </head>
 
     <body class="hold-transition skin-blue sidebar-mini">
@@ -126,109 +117,122 @@
                             </ul>
                         </li>
                     </ul>
-                    <!-- /.sidebar-menu -->
                 </section>
-                <!-- /.sidebar -->
             </aside>
 
-            <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Page Header
-                        <small>Optional description</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-                        <li class="active">Panel Administrativo</li>
-                    </ol>
-                </section>
-
-                <section class="content">
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-aqua">
-                                <div class="inner">
-                                    <h3>150</h3>
-
-                                    <p>Nuevos Clientes</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h4><i class="fa fa-user-plus"></i> Registrar Servicio</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="ControladorServicios?menu=Servicios" method="POST">
+                                    <input type="hidden" name="menu" value="Servicios" />
+                                    <input type="hidden" name="id" value="${servicio.id_Servicio}" />
+                                    <div class="form-group">
+                                        <label>Nombre</label>
+                                        <input type="text" name="txtNombre" value="${servicio.nombre}" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Precio</label>
+                                        <input type="text" name="txtPrecio" value="${servicio.precio}" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Descripcion</label>
+                                        <input type="text" name="txtDescripcion" value="${servicio.descripcion}" class="form-control">
+                                    </div>
+                                    <div class="text-center">
+                                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Bounce Rate</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-yellow">
-                                <div class="inner">
-                                    <h3>44</h3>
-
-                                    <p>User Registrations</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>65</h3>
-
-                                    <p>Unique Visitors</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
                     </div>
-                </section>
-                <!-- /.content -->
+                    <div class="col-lg-8 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h4><i class="fa fa-list"></i> Lista de Servicios</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-container">
+                                    <div class="mb-3">
+                                        <input type="text" id="searchInput" class="form-control" placeholder="Buscar servicio...">
+                                    </div>
+                                    <table id="tablaServicios" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Descripcion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach var="sv" items="${servicios}">
+                                                <tr>
+                                                    <td>${sv.id_Servicio}</td>
+                                                    <td>${sv.nombre}</td>
+                                                    <td>${sv.precio}</td>
+                                                    <td>${sv.descripcion}</td>
+                                                    <td>
+                                                        <a class="btn btn-warning" href="ControladorServicios?menu=Servicios&accion=Editar&id=${sv.id_Servicio}"><i class="fa fa-pencil"></i></a>
+                                                        <a class="btn btn-danger" href="ControladorServicios?menu=Servicios&accion=Delete&id=${sv.id_Servicio}"><i class="fa fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
+                                    </table>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#addServiceModal"><i class="fa fa-user-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.content-wrapper -->
 
-            <!-- Main Footer -->
+
+            <!-- Modal Agregar Servicio -->
+            <div class="modal fade" id="addServiceModal" tabindex="-1" aria-labelledby="addServiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addServiceModalLabel">Agregar Servicio</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="ControladorServicios?menu=Servicios" method="POST">
+                                <input type="hidden" name="menu" value="Servicios" />
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" name="txtNombre" value="${servicio.getNombre()}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Precio</label>
+                                    <input type="text" name="txtPrecio" value="${servicio.getPrecio()}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripcion</label>
+                                    <input type="text" name="txtDescripcion" value="${servicio.getDescripcion()}" class="form-control">
+                                </div>
+                                <div class="text-center">
+                                    <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>                  
             <footer class="main-footer">
-                <!-- To the right -->
                 <div class="pull-right hidden-xs">
                     Anything you want
                 </div>
-                <!-- Default to the left -->
                 <strong>Copyright &copy; 2020 <a href="#">IDAT</a>.</strong> Todos los derechos reservados.
             </footer>
-
             <div class="control-sidebar-bg"></div>
         </div>
-        <!-- ./wrapper -->
-
-        <!-- REQUIRED JS SCRIPTS -->
 
         <!-- jQuery 3 -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -236,12 +240,23 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
         <script src="dist/js/adminlte.min.js"></script>
+        <!-- DataTables -->
+        <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Inicializar la tabla de servicios
+                $('#tablaServicios').DataTable();
 
-        <!-- Optionally, you can add Slimscroll and FastClick plugins.
-             Both of these plugins are recommended to enhance the
-             user experience. -->
+                // Agregar funcionalidad de búsqueda
+                $('#searchInput').on('keyup', function () {
+                    $('#tablaServicios').DataTable().search($(this).val()).draw();
+                });
+            });
+        </script>
     </body>
 </html>
+
 <%
     } else {
         response.sendRedirect("identificar.jsp");

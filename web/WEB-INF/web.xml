@@ -4,34 +4,60 @@
         <servlet-name>srvUsuario</servlet-name>
         <servlet-class>Controlador.srvUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorVeterinario</servlet-name>
+        <servlet-class>Controlador.ControladorVeterinario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorProductos</servlet-name>
+        <servlet-class>Controlador.ControladorProductos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvMascota</servlet-name>
+        <servlet-class>Controlador.srvMascota</servlet-class>
+    </servlet>
+       <servlet>
+        <servlet-name>ControladorServicios</servlet-name>
+        <servlet-class>Controlador.ControladorServicios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>Controlador.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServiciosDAO</servlet-name>
+        <servlet-class>Controlador.ControladorServicios</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>srvUsuario</servlet-name>
         <url-pattern>/srvUsuario</url-pattern>
     </servlet-mapping>
-        <servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorVeterinario</servlet-name>
+        <url-pattern>/ControladorVeterinario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ControladorProductos</servlet-name>
         <url-pattern>/ControladorProductos</url-pattern>
     </servlet-mapping>
-        <servlet>
-        <servlet-name>ControladorProductos</servlet-name>
-        <servlet-class>Controlador.ControladorProductos</servlet-class>
-    </servlet>
-       <servlet>
-        <servlet-name>srvMascota</servlet-name>
-        <servlet-class>Controlador.srvMascota</servlet-class>
-    </servlet>
-        <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>Controlador.RegisterServlet</servlet-class>
-    </servlet>
-        <servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorServicios</servlet-name>
+        <url-pattern>/ControladorServicios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>srvMascota</servlet-name>
         <url-pattern>/srvMascota</url-pattern>
     </servlet-mapping>
-        <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServiciosDAO</servlet-name>
+        <url-pattern>/ServiciosDAO</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30

@@ -26,12 +26,13 @@ public class srvMascota extends HttpServlet {
         try {
             if (accion != null) {
                 switch (accion) {
-                    case "agregar":
-                        agregarMascota(request, response);
-                        break;
                     case "Listar":
                         listarMascotas(request, response);
                         break;
+                    case "agregar":
+                        agregarMascota(request, response);
+                        break;
+                    
                     default:
                         response.sendRedirect("RegistrarMascota.jsp");
                 }
@@ -103,6 +104,7 @@ public class srvMascota extends HttpServlet {
             System.out.println("Usuario no autenticado en srvMascota");
             request.setAttribute("msje", "Usuario no autenticado");
         }
-        request.getRequestDispatcher("RegistrarMascota.jsp").forward(request, response);
+        listarMascotas(request,response);
+        
     }
 }

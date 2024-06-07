@@ -63,7 +63,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">Olvide mi contraseña</a><br>
-    <a href="#" class="text-center">Register un nuevo usuario</a>
+    <a href="Registrarse.jsp" class="text-center">Register un nuevo usuario</a>
 
   </div>
   <!-- /.login-box-body -->
