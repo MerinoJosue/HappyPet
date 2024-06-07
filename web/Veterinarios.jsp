@@ -81,7 +81,7 @@
 
                     <ul class="sidebar-menu" data-widget="tree">
                         <li class="header">INICIO</li>
-                        <li class="active"><a href="ControladorEmpleado?menu=Empleado&accion=Listar"><i class="fa fa-link"></i> <span>Empleados</span></a></li>
+                        <li class="active"><a href="ControladorVeterinario?menu=Veterinario&accion=Listar"><i class="fa fa-link"></i> <span>Veterinarios</span></a></li>
                         <li class="treeview">
                             <a href="#"><i class="glyphicon glyphicon-th-large"></i> <span>Registros</span>
                                 <span class="pull-right-container">
@@ -125,27 +125,27 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card">
                             <div class="card-header text-center">
-                                <h4><i class="fa fa-user-plus"></i> Registrar Producto</h4>
+                                <h4><i class="fa fa-user-plus"></i> Registrar Veterinario</h4>
                             </div>
                             <div class="card-body">
-                                <form action="ControladorProductos?menu=Productos" method="POST">
-                                    <input type="hidden" name="menu" value="Productos" />
-                                    <input type="hidden" name="id" value="${producto.getId_Producto()}" />
+                                <form action="ControladorVeterinario?menu=Veterinario" method="POST">
+                                    <input type="hidden" name="menu" value="Veterinario" />
+                                    <input type="hidden" name="id" value="${veterinario.getId_Veterinario()}" />
+                                    <div class="form-group">
+                                        <label>Dni</label>
+                                        <input type="text" value="${veterinario.getDni()}" name="txtDni" class="form-control">
+                                    </div> 
                                     <div class="form-group">
                                         <label>Nombre</label>
-                                        <input type="text" value="${producto.getNombre()}" name="txtNombre" class="form-control">
+                                        <input type="text" value="${veterinario.getNom()}" name="txtNom" class="form-control">
                                     </div> 
                                     <div class="form-group">
-                                        <label>Precio</label>
-                                        <input type="text" value="${producto.getPrecio()}" name="txtPrecio" class="form-control">
-                                    </div> 
-                                    <div class="form-group">
-                                        <label>Stock</label>
-                                        <input type="text" value="${producto.getStock()}" name="txtStock" class="form-control">
+                                        <label>Telefono</label>
+                                        <input type="text" value="${veterinario.getTel()}" name="txtTel" class="form-control">
                                     </div> 
                                     <div class="mb-3">
                                         <label>Estado</label>
-                                        <input type="text" value="${producto.getEstado()}" name="txtEstado" class="form-control">
+                                        <input type="text" value="${veterinario.getEstado()}" name="txtEstado" class="form-control">
                                     </div>
                                     <div class="text-center">
                                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -157,35 +157,35 @@
                     <div class="col-lg-8 col-md-6 mb-4">
                         <div class="card">
                             <div class="card-header text-center">
-                                <h4><i class="fa fa-list"></i> Lista de Productos</h4>
+                                <h4><i class="fa fa-list"></i> Lista de Veterinarios</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-container">
                                     <div class="mb-3">
                                         <input type="text" id="searchInput" class="form-control" placeholder="Buscar producto...">
                                     </div>
-                                    <table id="tablaProductos" class="table">
+                                    <table id="tablaVeterinario" class="table">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Dni</th>
                                                 <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Stock</th>
+                                                <th>Telefono</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach var="pr" items="${productos}">
+                                            <c:forEach var="ve" items="${veterinarios}">
                                                 <tr>
-                                                    <td>${pr.getId_Producto()}</td>
-                                                    <td>${pr.getNombre()}</td>
-                                                    <td>${pr.getPrecio()}</td>
-                                                    <td>${pr.getStock()}</td>
-                                                    <td>${pr.getEstado()}</td>
+                                                    <td>${ve.getId_Veterinario()}</td>
+                                                    <td>${ve.getDni()}</td>
+                                                    <td>${ve.getNom()}</td>
+                                                    <td>${ve.getTel()}</td>
+                                                    <td>${ve.getEstado()}</td>
                                                     <td>
-                                                        <a class="btn btn-warning" href="ControladorProductos?menu=Productos&accion=Editar&id=${pr.getId_Producto()}"><i class="fa fa-pencil"></i></a>
-                                                        <a class="btn btn-danger" href="ControladorProductos?menu=Productos&accion=Delete&id=${pr.getId_Producto()}"><i class="fa fa-trash"></i></a>
+                                                        <a class="btn btn-warning" href="ControladorVeterinario?menu=Veterinario&accion=Editar&id=${ve.getId_Veterinario()}"><i class="fa fa-pencil"></i></a>
+                                                        <a class="btn btn-danger" href="ControladorVeterinario?menu=Veterinario&accion=Delete&id=${ve.getId_Veterinario()}"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>
@@ -193,7 +193,7 @@
                                     </table>
                                     
                                     <a class="btn btn-primary" href="ControladorProductos?menu=Productos&accion=GenerarPDF"><i class="fa fa-file-pdf-o"></i></a>
-                                    <a class="btn btn-info" data-toggle="modal" data-target="#addProductModal"><i class="fa fa-user-plus"></i></a>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#addVeterinarioModal"><i class="fa fa-user-plus"></i></a>
                                     
 
                                 </div>
@@ -204,31 +204,31 @@
             </div>
 
             <!-- Modal Agregar Producto -->
-            <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+            <div class="modal fade" id="addVeterinarioModal" tabindex="-1" aria-labelledby="addVeterinarioModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="addProductModalLabel">Agregar Producto</h5>
+                            <h5 class="modal-title" id="addVeterinarioModalLabel">Agregar Veterinario</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="ControladorProductos?menu=Productos" method="POST">
-                                <input type="hidden" name="menu" value="Productos" />
+                            <form action="ControladorVeterinario?menu=Veterinario" method="POST">
+                                <input type="hidden" name="menu" value="Veterinario" />
+                                <div class="form-group">
+                                    <label>DNI</label>
+                                    <input type="text" name="txtDni" value="${veterinario.getDni()}" class="form-control">
+                                </div>
                                 <div class="form-group">
                                     <label>Nombre</label>
-                                    <input type="text" name="txtNombre" value="${producto.getNombre()}" class="form-control">
+                                    <input type="text" name="txtNom" value="${veterinario.getNom()}" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Precio</label>
-                                    <input type="text" name="txtPrecio" value="${producto.getPrecio()}" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label>Stock</label>
-                                    <input type="text" name="txtStock" value="${producto.getStock()}" class="form-control">
+                                    <label>Telefono</label>
+                                    <input type="text" name="txtTel" value="${veterinario.getTel()}" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label>Estado</label>
-                                    <input type="text" name="txtEstado" value="${producto.getEstado()}" class="form-control">
+                                    <input type="text" name="txtEstado" value="${veterinario.getEstado()}" class="form-control">
                                 </div>
                                 <div class="text-center">
                                     <input type="submit" name="accion" value="Agregar" class="btn btn-info">
