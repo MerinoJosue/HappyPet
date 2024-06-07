@@ -225,11 +225,13 @@
                     </div>
                 </div>
             </div>                  
-            <footer class="main-footer">
+             <footer class="main-footer">
+                <!-- To the right -->
                 <div class="pull-right hidden-xs">
-                    Anything you want
+                    PetFrendly
                 </div>
-                <strong>Copyright &copy; 2020 <a href="#">IDAT</a>.</strong> Todos los derechos reservados.
+                <!-- Default to the left -->
+                <strong>HappyPet<a href="#"></a>.</strong> Todos los derechos reservados.
             </footer>
             <div class="control-sidebar-bg"></div>
         </div>

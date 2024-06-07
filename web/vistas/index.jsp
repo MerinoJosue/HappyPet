@@ -215,13 +215,13 @@
             <!-- /.content-wrapper -->
 
             <!-- Main Footer -->
-            <footer class="main-footer">
+             <footer class="main-footer">
                 <!-- To the right -->
                 <div class="pull-right hidden-xs">
-                    Anything you want
+                    PetFrendly
                 </div>
                 <!-- Default to the left -->
-                <strong>Copyright &copy; 2020 <a href="#">IDAT</a>.</strong> Todos los derechos reservados.
+                <strong>HappyPet<a href="#"></a>.</strong> Todos los derechos reservados.
             </footer>
 
             <div class="control-sidebar-bg"></div>
